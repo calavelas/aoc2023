@@ -9,16 +9,16 @@ def findCalibrationValue(calibrationDocument):
 
     calibrationValue = 0
     numberMapping = {
-        'zero':'0',
-        'one':'1',
-        'two':'2',
-        'three':'3',
-        'four':'4',
-        'five':'5',
-        'six':'6',
-        'seven':'7',
-        'eight':'8',
-        'nine':'9'
+        'zero':'z0o',
+        'one':'o1e',
+        'two':'t2o',
+        'three':'th3ee',
+        'four':'f4r',
+        'five':'f5e',
+        'six':'s6x',
+        'seven':'s7n',
+        'eight':'e8ight',
+        'nine':'n9ne'
     }
 
     #loop through documents
@@ -37,6 +37,7 @@ def findCalibrationValue(calibrationDocument):
             if indexForward  != -1 and indexForward < firstFindIndex:
                 firstFindIndex = indexForward
                 firstFindNumber = number
+
             if indexReturn != -1 and indexReturn > lastFindIndex:
                 lastFindIndex = indexReturn
                 lastFindNumber = number
