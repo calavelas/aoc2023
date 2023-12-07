@@ -9,6 +9,7 @@ def findCalibrationValue(calibrationDocument):
 
     calibrationValue = 0
     numberMapping = {
+        'zero':'0',
         'one':'1',
         'two':'2',
         'three':'3',
@@ -31,18 +32,21 @@ def findCalibrationValue(calibrationDocument):
         lastFindNumber = None
 
         for number in numberMapping:
-            index = line.find(number)
-            if index  != -1 and index < firstFindIndex:
-                firstFindIndex = index
+            indexForward = line.find(number)
+            indexReturn = line.rfind(number)    
+            if indexForward  != -1 and indexForward < firstFindIndex:
+                firstFindIndex = indexForward
                 firstFindNumber = number
-            if index != -1 and index > lastFindIndex:
-                lastFindIndex = index
+            if indexReturn != -1 and indexReturn > lastFindIndex:
+                lastFindIndex = indexReturn
                 lastFindNumber = number
 
         line = line.replace("\n","")
         lineOriginal = lineOriginal.replace("\n","")
+
         if firstFindNumber:
             line = line.replace(firstFindNumber, numberMapping[firstFindNumber])
+
         if lastFindNumber:
             line = line.replace(lastFindNumber, numberMapping[lastFindNumber])
 
