@@ -1,7 +1,7 @@
 import re
 
 #Parse Documents
-calibrationDocument = open("day1/calibrationDocument.txt", "r")
+calibrationDocument = open("day1/part1/calibrationDocument.txt", "r")
 
 def findCalibrationValue(calibrationDocument):
 
